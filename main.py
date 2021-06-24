@@ -1,5 +1,7 @@
 import discord
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 tables = 0
 client = discord.Client()
@@ -33,23 +35,6 @@ async def on_message(message):
             if "poll" in message2.content.lower():
                 await message.add_reaction(":yes:542028150293397515")
                 await message.add_reaction(":no:542028177703305216")
-        except Exception as e:
-            print(str(e))
-    if ':dirtypost' in message.content.lower():
-        try:
-            nums = [int(s) for s in message.content.split() if s.isdigit()]
-            n = nums[0]
-            n += 1
-            message2 = message
-            async for message in message2.channel.history(limit=n):
-                pass
-            await message.add_reaction(":nutting_pikachu:542036920285396993")
-            await message.add_reaction(
-                "a:pulsating_dickplant:567327025837113371")
-            await message.add_reaction(":ectoplasm:542016362730618900")
-            await message.add_reaction(":dickplant:541995248344104971")
-            await message.add_reaction(":japanese_porno:547049871471935528")
-            await message.add_reaction(":ahegao:568917738169434119")
         except Exception as e:
             print(str(e))
     if ':help' in message.content.lower():
